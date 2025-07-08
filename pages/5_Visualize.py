@@ -5,13 +5,7 @@ import altair as alt
 st.markdown(
     """
     <style>
-    /* st.write containers: white */
-.css-1cpxqw2, .css-1xarl3l, .stMarkdown {
-  background-color: #ffffff !important;
-  color: #4E342E !important;
-  padding: 10px;
-  border-radius: 5px;
-}
+ 
     /* Sidebar: brown gradient */
     [data-testid="stSidebar"] {
         background: linear-gradient(to bottom right, #5D4037, #8D6E63);
@@ -48,6 +42,15 @@ st.markdown(
         border-radius: 8px;
         padding: 10px;
     }
+    /* Make st.write list background white */
+.stApp p,
+.stApp ul,
+.stApp li {
+  background-color: #ffffff !important;
+  color: #4E342E !important;
+  padding: 5px;
+  border-radius: 4px;
+}
     </style>
     """,
     unsafe_allow_html=True
