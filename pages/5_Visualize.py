@@ -14,6 +14,16 @@ st.markdown(
     [data-testid="stSidebar"] * {
         color: #ffffff !important;
     }
+    /* Selectbox input & dropdown options background white */
+.stSelectbox div div {
+  background-color: #ffffff !important;
+  color: #4E342E !important;
+}
+
+.stSelectbox div div div {
+  background-color: #ffffff !important;
+  color: #4E342E !important;
+}
 
     /* Main content area: white background */
     .stApp {
