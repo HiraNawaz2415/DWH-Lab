@@ -1,6 +1,8 @@
 import streamlit as st
 import graphviz
- st.markdown(
+
+# ✅ Apply custom CSS
+st.markdown(
     """
     <style>
     [data-testid="stSidebar"] {
@@ -56,7 +58,7 @@ import graphviz
     unsafe_allow_html=True
 )
 
-
+# ✅ Main App Content
 st.title("🗂️ Define Fact & Dimensions (Star/Snowflake)")
 
 if 'raw_df' not in st.session_state:
@@ -94,14 +96,26 @@ for i in range(num_dimensions):
             dim_fk = st.selectbox(f"FK in {dim_name} for sub-dim", dim_cols, key=f"dim_fk_{i}")
             sub_dim = {'name': sub_name, 'columns': sub_cols, 'pk': sub_pk, 'fk': dim_fk}
 
-    dimension_defs.append({'name': dim_name, 'columns': dim_cols, 'pk': dim_pk, 'fk': fact_fk, 'sub_dim': sub_dim})
+    dimension_defs.append({
+        'name': dim_name,
+        'columns': dim_cols,
+        'pk': dim_pk,
+        'fk': fact_fk,
+        'sub_dim': sub_dim
+    })
 
 if st.button("Save Schema"):
     st.session_state['fact_table'] = df[fact_cols]
     st.session_state['dimensions'] = []
     for d in dimension_defs:
         d_table = df[d['columns']].drop_duplicates()
-        st.session_state['dimensions'].append({'name': d['name'], 'table': d_table, 'pk': d['pk'], 'fk': d['fk'], 'sub_dim': d['sub_dim']})
+        st.session_state['dimensions'].append({
+            'name': d['name'],
+            'table': d_table,
+            'pk': d['pk'],
+            'fk': d['fk'],
+            'sub_dim': d['sub_dim']
+        })
     st.session_state['schema_type'] = schema_type
     st.success(f"{schema_type} Schema saved.")
 
