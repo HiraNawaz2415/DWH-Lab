@@ -1,9 +1,6 @@
 import streamlit as st
 import graphviz
-
-
-
-      st.markdown(
+ st.markdown(
     """
     <style>
     [data-testid="stSidebar"] {
