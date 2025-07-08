@@ -13,6 +13,22 @@ st.markdown(
     background-color: #ffffff !important;
     color: #4E342E !important;
 }
+/* Make st.code blocks white background, dark text */
+pre {
+  background-color: #ffffff !important;
+  color: #4E342E !important;
+  border: 1px solid #4E342E !important;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Make st.write PK/FK info container white background too */
+.css-1cpxqw2, .css-1xarl3l, .stMarkdown {
+  background-color: #ffffff !important;
+  color: #4E342E !important;
+  padding: 10px;
+  border-radius: 5px;
+}
 /* Make all input fields white background & dark text */
 input {
     background-color: #ffffff !important;
