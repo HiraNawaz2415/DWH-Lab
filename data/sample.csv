@@ -1,0 +1,6 @@
+OrderID,Product,Category,Amount,CustomerID
+1,Apple,Fruit,10,100
+2,Banana,Fruit,20,100
+3,Carrot,Vegetable,15,200
+4,Apple,Fruit,25,200
+5,Banana,Fruit,30,300
