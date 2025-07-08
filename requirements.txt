@@ -1,6 +1,5 @@
-streamlit>=1.27
-pandas
-sqlite3
-altair
-graphviz
-fpdf
+streamlit==1.32.2
+pandas==2.2.2
+altair==5.2.0
+graphviz==0.20.1
+fpdf==1.7.2
