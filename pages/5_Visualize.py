@@ -42,15 +42,6 @@ st.markdown(
         border-radius: 8px;
         padding: 10px;
     }
-    /* Make st.write list background white */
-.stApp p,
-.stApp ul,
-.stApp li {
-  background-color: #ffffff !important;
-  color: #4E342E !important;
-  padding: 5px;
-  border-radius: 4px;
-}
     </style>
     """,
     unsafe_allow_html=True
