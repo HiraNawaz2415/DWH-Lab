@@ -1,11 +1,11 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
-# Apply custom CSS
+
+# ✅ Custom CSS for white select boxes
 st.markdown(
     """
     <style>
- 
     /* Sidebar: brown gradient */
     [data-testid="stSidebar"] {
         background: linear-gradient(to bottom right, #5D4037, #8D6E63);
@@ -15,16 +15,17 @@ st.markdown(
     [data-testid="stSidebar"] * {
         color: #ffffff !important;
     }
-    /* Selectbox input & dropdown options background white */
-.stSelectbox div div {
-  background-color: #ffffff !important;
-  color: #4E342E !important;
-}
 
-.stSelectbox div div div {
-  background-color: #ffffff !important;
-  color: #4E342E !important;
-}
+    /* Selectbox input & dropdown options background white */
+    .stSelectbox div div {
+        background-color: #ffffff !important;
+        color: #4E342E !important;
+    }
+
+    .stSelectbox div div div {
+        background-color: #ffffff !important;
+        color: #4E342E !important;
+    }
 
     /* Main content area: white background */
     .stApp {
@@ -36,7 +37,6 @@ st.markdown(
         color: #4E342E;
     }
 
-    /* Optional: metric containers subtle brown tint */
     div[data-testid="metric-container"] {
         background: rgba(93, 64, 55, 0.05);
         border-radius: 8px;
@@ -46,6 +46,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 st.title("📊 Drill-down Pivot")
 
 if 'fact_table' not in st.session_state:
@@ -54,20 +55,20 @@ if 'fact_table' not in st.session_state:
 
 df = st.session_state['fact_table']
 
-st.write("Available columns:", df.columns.tolist())
+st.write("✅ **Available columns:**", df.columns.tolist())
 
-x = st.selectbox("X-axis (group by)", df.columns)
-y = st.selectbox("Y-axis (value to sum)", df.columns)
+# 🟢 Safe select boxes
+x = st.selectbox("📌 X-axis (group by)", df.columns.tolist())
+y = st.selectbox("📌 Y-axis (value to sum)", df.columns.tolist())
 
-# 🟢 Debug print
-st.write("X selected:", x)
-st.write("Y selected:", y)
-st.write("Sample data:", df[[x, y]].head())
+# 🟢 Debug info
+st.write("🔍 **X selected:**", x)
+st.write("🔍 **Y selected:**", y)
 
-# Safe check
-if df[x].ndim != 1:
-    st.error(f"🚫 Selected index `{x}` is not 1D!")
-else:
+# ✅ Safe check before slicing
+if x in df.columns and y in df.columns:
+    st.write("✅ **Sample data:**", df[[x, y]].head())
+
     pivot = pd.pivot_table(df, index=x, values=y, aggfunc='sum')
     st.dataframe(pivot)
 
@@ -76,3 +77,6 @@ else:
         y=y
     )
     st.altair_chart(chart, use_container_width=True)
+
+else:
+    st.error(f"🚫 **Column(s) not found!** X: {x}, Y: {y}")
