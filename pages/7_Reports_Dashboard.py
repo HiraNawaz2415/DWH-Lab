@@ -4,6 +4,20 @@ import altair as alt
 st.markdown(
     """
     <style>
+    /* ✅ Make sidebar filter labels dark brown */
+label, .stSidebar label, .stSidebar legend {
+    color: #4E342E !important;  /* Dark brown */
+}
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] h4,
+[data-testid="stSidebar"] h5,
+[data-testid="stSidebar"] h6 {
+    color: #4E342E !important;  /* Dark brown for sidebar headings */
+}
+
     [data-testid="stSidebar"] {
         background: linear-gradient(to bottom right, #5D4037, #8D6E63);
     }
