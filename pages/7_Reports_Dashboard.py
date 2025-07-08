@@ -43,16 +43,7 @@ label, .stSidebar label, .stSidebar legend {
         color: #4E342E !important;
     }
 
-    /* ✅ Make multiselect items white */
-    .stMultiSelect div {
-        background-color: #ffffff !important;
-        color: #4E342E !important;
-    }
 
-    .stMultiSelect div div {
-        background-color: #ffffff !important;
-        color: #4E342E !important;
-    }
 
 
     </style>
