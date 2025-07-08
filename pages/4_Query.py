@@ -13,6 +13,18 @@ st.markdown(
     background-color: #ffffff !important;
     color: #4E342E !important;
 }
+/* Make all input fields white background & dark text */
+input {
+    background-color: #ffffff !important;
+    color: #4E342E !important;
+}
+
+/* Make all buttons white background & dark text */
+button {
+    background-color: #ffffff !important;
+    color: #4E342E !important;
+    border: 1px solid #4E342E !important;
+}
 
     /* Sidebar text: white */
     [data-testid="stSidebar"] * {
