@@ -1,7 +1,7 @@
 import streamlit as st
 import graphviz
-# Apply custom CSS
-# Custom CSS with input tweaks
+
+# ✅ Custom CSS to make ALL widget text white
 st.markdown(
     """
     <style>
@@ -25,30 +25,53 @@ st.markdown(
         color: #4E342E;
     }
 
-    /* Metric containers subtle brown tint */
-    div[data-testid="metric-container"] {
-        background: rgba(93, 64, 55, 0.05);
-        border-radius: 8px;
-        padding: 10px;
-    }
-
-    /* Inputs, text areas, select boxes — white text & dark background */
+    /* Inputs: white text, dark background */
     input, textarea, select {
         color: #ffffff !important;
         background-color: #4E342E !important;
     }
 
-    /* Streamlit widgets often use divs inside labels */
-    .stTextInput > div > input,
-    .stSelectbox > div > div > div {
+    /* Number inputs, text input inside div */
+    .stNumberInput input,
+    .stTextInput input,
+    .stSelectbox div div div,
+    .stMultiSelect div div {
         color: #ffffff !important;
         background-color: #4E342E !important;
     }
 
-    /* Adjust placeholder text if needed */
+    /* Buttons: white text, dark brown bg */
+    button[kind="primary"] {
+        color: #ffffff !important;
+        background-color: #4E342E !important;
+    }
+
+    /* Streamlit uses button class too */
+    button {
+        color: #ffffff !important;
+    }
+
+    /* Radio and checkbox labels */
+    label {
+        color: #ffffff !important;
+    }
+
+    /* Number input arrows */
+    input[type="number"] {
+        color: #ffffff !important;
+    }
+
+    /* Placeholder text */
     ::placeholder {
         color: #dddddd !important;
         opacity: 1;
+    }
+
+    /* Metric containers subtle brown tint */
+    div[data-testid="metric-container"] {
+        background: rgba(93, 64, 55, 0.05);
+        border-radius: 8px;
+        padding: 10px;
     }
     </style>
     """,
