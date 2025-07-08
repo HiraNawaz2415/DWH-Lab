@@ -70,6 +70,6 @@ else:
     st.info("Upload your CSV or try the sample below:")
 
     if st.button("📄 Load Sample Data"):
-        df = pd.read_csv("dwh/data/sample.csv")
+        df = pd.read_csv("data/sample.csv")
         st.session_state['raw_df'] = df
         st.dataframe(df.head())
