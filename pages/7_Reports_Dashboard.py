@@ -9,14 +9,6 @@ label, .stSidebar label, .stSidebar legend {
     color: #4E342E !important;  /* Dark brown */
 }
 
-[data-testid="stSidebar"] h1,
-[data-testid="stSidebar"] h2,
-[data-testid="stSidebar"] h3,
-[data-testid="stSidebar"] h4,
-[data-testid="stSidebar"] h5,
-[data-testid="stSidebar"] h6 {
-    color: #4E342E !important;  /* Dark brown for sidebar headings */
-}
 
     [data-testid="stSidebar"] {
         background: linear-gradient(to bottom right, #5D4037, #8D6E63);
@@ -62,13 +54,7 @@ label, .stSidebar label, .stSidebar legend {
         color: #4E342E !important;
     }
 
-    /* ✅ Make radio buttons white */
-    div[data-baseweb="radio"] label {
-        background-color: #ffffff !important;
-        color: #4E342E !important;
-        padding: 4px 8px;
-        border-radius: 4px;
-    }
+
     </style>
     """,
     unsafe_allow_html=True
