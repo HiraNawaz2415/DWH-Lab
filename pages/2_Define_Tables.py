@@ -1,37 +1,27 @@
 import streamlit as st
 import graphviz
 
-# ✅ Custom CSS to make ALL widget text white
-st.markdown(
+
+
+      st.markdown(
     """
     <style>
-    /* Sidebar: brown gradient */
     [data-testid="stSidebar"] {
         background: linear-gradient(to bottom right, #5D4037, #8D6E63);
     }
-
-    /* Sidebar text: white */
     [data-testid="stSidebar"] * {
         color: #ffffff !important;
     }
-
-    /* Main content area: white background */
     .stApp {
         background-color: #ffffff;
     }
-
-    /* Main text: dark brown */
     .stApp, .stApp * {
         color: #4E342E;
     }
-
-    /* Inputs: white text, dark background */
     input, textarea, select {
         color: #ffffff !important;
         background-color: #4E342E !important;
     }
-
-    /* Number inputs, text input inside div */
     .stNumberInput input,
     .stTextInput input,
     .stSelectbox div div div,
@@ -39,44 +29,36 @@ st.markdown(
         color: #ffffff !important;
         background-color: #4E342E !important;
     }
-
-    /* Buttons: white text, dark brown bg */
-    button[kind="primary"] {
-        color: #ffffff !important;
-        background-color: #4E342E !important;
-    }
-
-    /* Streamlit uses button class too */
     button {
         color: #ffffff !important;
     }
-
-    /* Radio and checkbox labels */
     label {
         color: #ffffff !important;
     }
-
-    /* Number input arrows */
-    input[type="number"] {
-        color: #ffffff !important;
-    }
-
-    /* Placeholder text */
     ::placeholder {
         color: #dddddd !important;
         opacity: 1;
     }
-
-    /* Metric containers subtle brown tint */
     div[data-testid="metric-container"] {
         background: rgba(93, 64, 55, 0.05);
         border-radius: 8px;
         padding: 10px;
     }
+    /* Number input spinner arrows: Chrome/Edge/Safari */
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        background: #ffffff !important;
+    }
+    /* Firefox: hide default spinner */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
     </style>
     """,
     unsafe_allow_html=True
 )
+
 
 st.title("🗂️ Define Fact & Dimensions (Star/Snowflake)")
 
