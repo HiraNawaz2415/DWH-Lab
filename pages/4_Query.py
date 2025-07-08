@@ -9,6 +9,10 @@ st.markdown(
     [data-testid="stSidebar"] {
         background: linear-gradient(to bottom right, #5D4037, #8D6E63);
     }
+    textarea {
+    background-color: #ffffff !important;
+    color: #4E342E !important;
+}
 
     /* Sidebar text: white */
     [data-testid="stSidebar"] * {
