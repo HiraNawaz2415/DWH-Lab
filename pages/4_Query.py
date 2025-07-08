@@ -13,6 +13,16 @@ st.markdown(
     background-color: #ffffff !important;
     color: #4E342E !important;
 }
+/* Selectbox input & dropdown options background white */
+.stSelectbox div div {
+  background-color: #ffffff !important;
+  color: #4E342E !important;
+}
+
+.stSelectbox div div div {
+  background-color: #ffffff !important;
+  color: #4E342E !important;
+}
 /* Make st.code blocks white background, dark text */
 pre {
   background-color: #ffffff !important;
