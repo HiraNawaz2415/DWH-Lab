@@ -1,41 +1,64 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
-# Apply custom CSS
 st.markdown(
     """
     <style>
-    /* Sidebar: brown gradient */
     [data-testid="stSidebar"] {
         background: linear-gradient(to bottom right, #5D4037, #8D6E63);
     }
 
-    /* Sidebar text: white */
     [data-testid="stSidebar"] * {
         color: #ffffff !important;
     }
 
-    /* Main content area: white background */
     .stApp {
         background-color: #ffffff;
     }
 
-    /* Main text: dark brown */
     .stApp, .stApp * {
         color: #4E342E;
     }
 
-    /* Optional: metric containers subtle brown tint */
     div[data-testid="metric-container"] {
         background: rgba(93, 64, 55, 0.05);
         border-radius: 8px;
         padding: 10px;
     }
+
+    /* ✅ Make selectbox dropdown & items white */
+    .stSelectbox div div {
+        background-color: #ffffff !important;
+        color: #4E342E !important;
+    }
+
+    .stSelectbox div div div {
+        background-color: #ffffff !important;
+        color: #4E342E !important;
+    }
+
+    /* ✅ Make multiselect items white */
+    .stMultiSelect div {
+        background-color: #ffffff !important;
+        color: #4E342E !important;
+    }
+
+    .stMultiSelect div div {
+        background-color: #ffffff !important;
+        color: #4E342E !important;
+    }
+
+    /* ✅ Make radio buttons white */
+    div[data-baseweb="radio"] label {
+        background-color: #ffffff !important;
+        color: #4E342E !important;
+        padding: 4px 8px;
+        border-radius: 4px;
+    }
     </style>
     """,
     unsafe_allow_html=True
 )
-
 st.title("📈 Data Warehouse Reports & Dashboard")
 
 if 'fact_table' not in st.session_state:
